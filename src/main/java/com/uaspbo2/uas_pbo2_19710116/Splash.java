@@ -8,7 +8,6 @@ package com.uaspbo2.uas_pbo2_19710116;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 /**
  *
@@ -19,24 +18,24 @@ public class Splash extends javax.swing.JFrame {
     /**
      * Creates new form Splash
      */
-    String url = "images/load.gif";
+    String url = "/images/load.gif";
     String desc = "Spinner";
-    ImageIcon icon = new ImageIcon(url, desc);
+    ImageIcon icon = createImageIcon(url, desc);
 
     public Splash() {
         initComponents();
         jLabel1.setIcon(icon);
     }
 
-//    protected ImageIcon createImageIcon(String path, String description) {
-//        java.net.URL imgURL = getClass().getResource(path);
-//        if (imgURL != null) {
-//            return new ImageIcon(imgURL, description);
-//        } else {
-//            System.err.println("Tidak dapat menemukan file: " + path);
-//            return null;
-//        }
-//    }
+    protected ImageIcon createImageIcon(String path, String description) {
+        java.net.URL imgURL = getClass().getResource(path);
+        if (imgURL != null) {
+            return new ImageIcon(imgURL, description);
+        } else {
+            System.err.println("Tidak dapat menemukan file: " + path);
+            return null;
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
