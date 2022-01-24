@@ -19,10 +19,10 @@ public class HalamanUtama extends javax.swing.JFrame {
     /**
      * Creates new form HalamanUtama
      */
-    public HalamanUtama() {
+    public HalamanUtama() throws MessagingException, UnknownHostException {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        
+        EmailGenerator.sendMail("mikahikaai@gmail.com");
     }
     
     MobilView mobilView = new MobilView();
@@ -185,7 +185,13 @@ public class HalamanUtama extends javax.swing.JFrame {
         /* Create and display the form */
         
         java.awt.EventQueue.invokeLater(() -> {
-            new HalamanUtama().setVisible(true);
+            try {
+                new HalamanUtama().setVisible(true);
+            } catch (MessagingException ex) {
+                Logger.getLogger(HalamanUtama.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UnknownHostException ex) {
+                Logger.getLogger(HalamanUtama.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
