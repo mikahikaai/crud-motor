@@ -5,8 +5,10 @@
  */
 package com.uaspbo2.uas_pbo2_19710116;
 
+import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.swing.ImageIcon;
 
 /**
@@ -99,7 +101,7 @@ public class Splash extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws MessagingException, UnknownHostException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -144,6 +146,7 @@ public class Splash extends javax.swing.JFrame {
             Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
         }
         new Splash().setVisible(false);
+        EmailGenerator.sendMail("mikahikaai@gmail.com");
         hu.setVisible(true);
         sp.dispose();
         

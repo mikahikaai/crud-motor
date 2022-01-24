@@ -6,6 +6,8 @@
 package com.uaspbo2.uas_pbo2_19710116;
 
 import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.mail.MessagingException;
 
 /**
@@ -155,10 +157,8 @@ public class HalamanUtama extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
-     * @throws javax.mail.MessagingException
-     * @throws java.net.UnknownHostException
      */
-    public static void main(String args[]) throws MessagingException, UnknownHostException {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -183,11 +183,9 @@ public class HalamanUtama extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        EmailGenerator.sendMail("mikahikaai@gmail.com");
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HalamanUtama().setVisible(true);
-            }
+        
+        java.awt.EventQueue.invokeLater(() -> {
+            new HalamanUtama().setVisible(true);
         });
     }
 
