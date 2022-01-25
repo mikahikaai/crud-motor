@@ -57,6 +57,7 @@ public class Splash extends javax.swing.JFrame {
         jBg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(0, 0, 0));
         setForeground(new java.awt.Color(204, 255, 255));
         setUndecorated(true);
