@@ -32,7 +32,7 @@
 		<band height="822" splitType="Stretch">
 			<image vAlign="Bottom">
 				<reportElement positionType="Float" mode="Opaque" x="0" y="313" width="85" height="409" backcolor="#000000" uuid="f5d9aaa9-6d42-4e8e-a82f-3bab64edd6d0"/>
-				<imageExpression><![CDATA["silhouette.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[this.getClass().getResourceAsStream("/report/silhouette.jpg")]]></imageExpression>
 			</image>
 			<rectangle>
 				<reportElement positionType="Float" x="-20" y="313" width="20" height="409" backcolor="#000000" uuid="888eefd7-d419-4a87-9fe7-99f1a9e70835"/>
