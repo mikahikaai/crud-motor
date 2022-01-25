@@ -438,8 +438,7 @@ public class PembeliView extends javax.swing.JInternalFrame {
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
         try {
-            String filetoFill="./src/main/java/com/uaspbo2/uas_pbo2_19710116/rPembeli.jasper";
-            JasperPrint jp=JasperFillManager.fillReport(filetoFill, null, conn);
+            JasperPrint jp=JasperFillManager.fillReport(getClass().getResourceAsStream("/report/rPembeli.jasper"), null, conn);
             JasperViewer.viewReport(jp,false);
         } catch (Exception ex) {
             ex.printStackTrace();
